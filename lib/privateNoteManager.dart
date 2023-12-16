@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+// https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html
 class PrivateNotePage extends StatefulWidget {
   const PrivateNotePage({Key? key}) : super(key: key);
 
@@ -8,6 +9,7 @@ class PrivateNotePage extends StatefulWidget {
   _PrivateNotePageState createState() => _PrivateNotePageState();
 }
 
+// https://api.flutter.dev/flutter/widgets/State-class.html
 class _PrivateNotePageState extends State<PrivateNotePage> {
   List<String> titles = [];
   List<String> memos = [];
@@ -24,7 +26,6 @@ class _PrivateNotePageState extends State<PrivateNotePage> {
       titles = prefs.getStringList('titles') ?? [];
       memos = prefs.getStringList('memos') ?? [];
     });
-
   }
 
   _saveMemos() async {

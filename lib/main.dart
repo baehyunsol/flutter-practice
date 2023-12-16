@@ -6,9 +6,11 @@ void main() {
   runApp(MyApp());
 }
 
+// https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // https://api.flutter.dev/flutter/material/MaterialApp-class.html
     return MaterialApp(
       home: MyHomePage(),
       theme: ThemeData(
@@ -24,9 +26,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
+    // https://api.flutter.dev/flutter/material/Scaffold-class.html
+    // https://dart.dev/language/functions#named-parameters
     return Scaffold(
       appBar: AppBar(
         title: Text('Note App'),
@@ -39,6 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
+                  // https://api.flutter.dev/flutter/material/MaterialPageRoute-class.html
                   MaterialPageRoute(builder: (context) => const PrivateNotePage()),
                 );
               },

@@ -5,12 +5,16 @@ import 'package:http/http.dart' as http;
 import 'note.dart';
 
 class PublicNotePage extends StatelessWidget {
+  // `final`: `let` in rust
+  // `const`: `const` in rust
   final String baseUrl;
 
   PublicNotePage(this.baseUrl, {Key? key}) : super(key: key);
 
+  // https://dart.dev/codelabs/async-await
   Future<List<Note>> getPublicNotes() async {
     final response = await http.get(Uri.parse('$baseUrl/memos'));
+
     if (response.statusCode == 200) {
       final List<dynamic> data = json.decode(response.body);
       return data.map((item) => Note.fromJson(item)).toList();
